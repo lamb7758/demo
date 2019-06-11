@@ -38,18 +38,18 @@ public class RequestLimitAop {
             Object[] args = joinPoint.getArgs();
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 
-//            HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getResponse();
-//            response.setContentType("text/html;charset=UTF-8");
-//            response.setCharacterEncoding("UTF-8");
-//            PrintWriter out;
-//            try {
-//                out = response.getWriter();
-//                out.print("请求过于频繁,超出限制!");
-//                out.flush();
-//                out.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+            HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getResponse();
+            response.setContentType("text/html;charset=UTF-8");
+            response.setCharacterEncoding("UTF-8");
+            PrintWriter out;
+            try {
+                out = response.getWriter();
+                out.print("请求过于频繁,超出限制!");
+                out.flush();
+                out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             String ip = getIpAddress(request);
             String url = request.getRequestURL().toString();
             String key = "req_limit_".concat(url).concat("_").concat(ip);
