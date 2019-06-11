@@ -46,7 +46,7 @@ public class SysAspect {
     	  String ip = request.getRemoteAddr();
     	  System.out.println("ip--->"+ip);
 
-    	  return  str+"0000";
+    	  return  str;
     }
     
     
