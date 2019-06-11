@@ -3,10 +3,10 @@ package com.lamb7758.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
+
 
 @SpringBootApplication
-@ComponentScan("com.lamb7758.*")
+//@ComponentScan("com.lamb7758.*")
 public class DemoApplication {
 
     public static void main(String[] args) {
